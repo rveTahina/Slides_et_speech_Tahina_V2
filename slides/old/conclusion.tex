@@ -1,0 +1,65 @@
+\subsection{Summary}
+\begin{frame}{Summary}
+%Ajouter schéma d'un SMA montrant toutes les contributions
+\par \textbf{General context}: Multi-agent modelling and simulation for smart city and smart island building
+\par \textbf{Application context}: Smart mobility, modelling and simulation of individual electric vehicles flow movement in a territory
+\par \textbf{Example}: Electric vehicle recharging with public charging points
+\par \textbf{Problem}: Management of limited ans shared ressources in space and time
+\par \textbf{Contributions}:
+\begin{itemize}
+    \item Temporal representation as an environment. A set 3 solutions: 
+    \begin{itemize}
+        \item a MAS design methodology: the AGRET model
+        \item an interaction medium: the temporal environment
+        \item an interaction model : IRM4S
+    \end{itemize}
+    \item Temporal reasoning: An anticipatory reasoning that take into account the past, the present and the future. A set of solutions: 
+    \begin{itemize}
+        \item At the agent level: based on the AGRET model
+        \item At the multi-agent level: a notification system 
+    \end{itemize}
+\end{itemize}
+\par \textbf{Implementation}: Optimisation of the recharging distribution in space and time on SKUADCityModel
+
+\note{
+\scriptsize{
+Ce travail de thèse s'inscrit dans le contexte général de la modélisation et la simulation multi-agent pour l'élaboration et la planification de villes intelligentes. Notre contexte applicatif concerne principalement la modélisation et la simulation de flux de déplacement quotidien de véhicules électriques individuels sur un territoire. L'objectif est d'optimiser la gestion du rechargement des véhicules. Cet exemple illustre un problème plus général qui est la gestion d'une ressource partagée et limitée dans l'espace et dans le temps. Il s'agit d'un problème central qui fait partie de ceux à l'origine même de la création du concept des villes intelligentes. Une première étude autour de ce sujet nous a permis de relever deux besoins complémentaires sur lesquels nous avons apporté nos contributions :
+\begin{itemize}
+    \item Un besoin de support d'interaction pour l'échange d'informations spatiales, temporelles et sociales;
+    \item Un besoin de raisonnement permettant de prendre en compte ces informations échangées dans l'objectif d'optimiser la gestion de ressources partagées et limitées dans l'espace et le temps.
+\end{itemize}
+\par Dans ce cadre, nos deux contributions relèvent du temps. Notre première contribution concerne la représentation du temps comme un environnement. Au niveau multi-agent, nous proposons un support d'interaction pour l'échange et le stockage d'informations sur l'espace, le temps et l'organisation. Notre deuxième contribution concerne le raisonnement temporel. Nous proposons un raisonnement anticipatif basé sur la perception de l'environnement spatial, de l'environnement temporel et de l'environnement social. Plus particulièrement, nous exploitons la visibilité sur la dimension future du temps qui est permise par l'environnement temporelle. 
+\par Dans l'exemple du rechargement des véhicules électriques, l'intégration de notre approche permet l'optimisation de la répartition des recharges dans l'espace et dans le temps. Nous montrons cela à travers une implémentation sur un modèle de simulation multi-agent appelé SkuadCityModel. 
+\par Plus généralement, au niveau de la ville intelligente, l'implémentation de nos contributions permet l'optimisation de la gestion des ressources dans l'espace et dans le temps.
+}
+}
+    
+\end{frame}
+
+
+
+\subsection{Further work}
+\begin{frame}{Further Work}
+\par 3 interesting research avenues:
+\begin{enumerate}
+    \item \textbf{At the level of the simulation model}: implementation on SmartCityModel 
+    \item \textbf{At the conceptual level}: The exploitation of social media
+    \item \textbf{Perspectives at the application context level}: Towards a smart island concept 
+\end{enumerate}
+A preliminary study has already been carried out for each research avenue.
+
+\note{
+\tiny{
+\par Plusieurs perspectives sont envisageables et peuvent se classer en 3 groupes:
+\par Les perspectives au niveau du modèle de simulation : J’ai mentionné au début de la présentation que nous travaillons sur deux modèles de simulations : 
+SkuadCityModel qui tourne sur une plateforme appelée SimSKUAD, développée en interne par notre équipe
+SmartCityModel qui tourne sur la plateforme Repast Simphony
+Une implémentation sur SimSKUAD a déjà été faite dans le cadre de cette thèse, une perspective interessant serait donc une réimplémentaiton dans Repast Simphony. Un début d’étude a déjà été menée à ce niveau.
+
+\par Perspective au niveau conceptuel: la piste des réseaux sociaux. Dans les approches que nous proposons, nous avons choisi de nous concentrer principalement sur l'espace physique et le temps. Néanmoins, la dimension sociale fait partie de notre proposition au niveau du modèle AGRET et nous l'utilisons sur plusieurs niveaux dans nos contributions. Nous sommes cependant conscients qu'elle pourrait être exploitée de manière encore plus poussée. La piste des réseaux sociaux est intéressante, car il s'agit d'outils qui sont fortement utilisés actuellement pour l'échange d'informations dans les villes. Une utilisation consiste à mettre en place des règles d'accessibilité des informations temporelles qui se basent sur les groupes et les rôles dans la dimension sociale. Une autre utilisation qui vient compléter la première est la une mise en place d'un système d'abonnement plus abouti. Une utilisation plus élaborée du système d'abonnement consiste à définir un groupe d'abonnés au niveau de l'environnement social. 
+Un début d’étude a également été mené à ce niveau.
+
+\par Perspectives au niveau du contexte applicatif: vers un concept d’île intelligente. Une des problématiques sur lesquels nous avons travaillé en début de cette thèse, mais que nous n'avons pas pu continuer pour des raisons de temps et de priorité concerne le concept d'île intelligente. Nous partons d'un constat selon lequel beaucoup d'études sont faites autour de la ville intelligente, mais très peu traitent des îles intelligentes. D'une manière plus générale, la piste des îles intelligentes nous semble intéressante dans l'étude et l'optimisation de la réplicabilité et la transférabilité d'un modèle de simulation multi-agent d'un territoire à un autre. Dans ce cadre, la ville et l'île peuvent être considérées comme deux extrêmes en termes de caractéristiques. En effet, beaucoup de modèles de simulation multi-agent sont conçus et testés dans le cadre d'un type particulier de territoire, avec les caractéristiques correspondantes. La plupart du temps, il s'agit de territoires urbains (villes). Le transfert de modèle de ce type dans des contextes de territoires insulaires (comme les îles) nous a permis de détecter un certain nombre de limites. En effet, en raison de leurs différences géographiques et socioculturelles, les villes et les îles réagissent différemment aux mêmes changements. Il s'agit d'une piste intéressante dans l'étude de la transférabilité des solutions de ville intelligente des villes aux îles et inversement. Tester un modèle de simulation conçu pour un contexte urbain dans un contexte à fortes contraintes peut aider à sa consolidation. Une première expérimentation a été menée dans le cadre de la ville de Londres et de l'île de La Réunion. Dans cette expérimentation, nous avons montré l'exemple de la conception d'un modèle de simulation pour un contexte d'île intelligente par enrichissement d'un modèle de simulation existant qui n'était auparavant appliqué qu'aux villes. Ces expériences ont été réalisées sur la plateforme de simulation Repast Simphony. L'objectif était de concevoir un modèle de simulation assez générique pour être facilement transférable d'un territoire à un autre doté de caractéristiques très différentes. Cela a fait l'objet de deux publications.
+
+}}
+\end{frame}

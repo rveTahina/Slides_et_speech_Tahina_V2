@@ -1,0 +1,112 @@
+\documentclass[9pt,notes]{beamer}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Use roboto Font (recommended)
+\usepackage[sfdefault]{roboto}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[export]{adjustbox}
+\usepackage{dirtytalk}
+\usepackage[normalem]{ ulem }% pour barrer le texte
+\usepackage{soul} % pour barrer le texte
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Define where theme files are located. ('/styles')
+\usepackage{styles/fluxmacros}
+\usefolder{styles}
+% Use Flux theme v0.1 beta
+% Available style: asphalt, blue, red, green, gray 
+\usetheme[style=asphalt]{flux}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Extra packages for the demo:
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{ragged2e}
+\usepackage{schemabloc}
+\usepackage{pgfpages}
+\setbeameroption{show notes on second screen}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Informations
+\title{\uppercase{Multi-Agent Simulations for Smart Cities}}
+\subtitle{A Multi-Environmental, Temporal, Spatial and Organizational Architecture. Contributions for Anticipation}
+\author{Tahina Ralitera}
+\institute{\footnotesize{\textbf{Supervisor :} Pr. Rémy Courdier}\\ 
+		\footnotesize{\textbf{Co-supervisor :} Dr. Denis Payet}}
+\date{\today}
+\titlegraphic{assets/logoUR.png}
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\AtBeginSubsection[]
+{
+    \begin{frame}
+        \frametitle{Outline}
+        \tableofcontents[currentsection,currentsubsection]
+    \end{frame}
+}
+
+\begin{document}
+
+% Generate title page
+\titlepage %30 s
+
+\section{Introduction}
+\input{slides/introduction}
+
+% La table des matières
+\input{slides/table_des_matieres}
+
+%\section{Time, space and organizations MAS}
+%\input{slides/state_of_the_art}
+
+%\section{Contributions}
+\section{Time Representation}
+\input{slides/time_representation}
+\section{Temporal reasoning}
+\input{slides/temporal_reasoning}
+\section{Conclusion}
+\input{slides/conclusion}
+\input{slides/bibliography}
+
+%\section{Introduction}
+
+%\subsection{Background (Chapter 1)}
+%\input{slides/contexte}
+%\subsection{Problem (Chapter 1)}
+%\input{slides/problematique}
+
+%\section{State of the art (Chapter 2)}
+%\subsection{Interaction support}
+%\input{slides/state_of_the_art_1}
+%\subsection{Reasoning}
+%\input{slides/state_of_the_art_2}
+
+%\section{Contributions}
+%\subsection{AGRET : Agent-Group-Role-Environment-Time (Chapter 3)}
+%\input{slides/contribution1}
+%\subsection{Anticipatory Reasoning in ABMs: Benefits of the AGRET Model (Chapter 4)}
+%\input{slides/contribution2}
+
+%\section{Experiments}
+%\subsection{Implementation (Chapter 5)}
+%\input{slides/mise_en_oeuvre}
+%\subsection{Assessment (Chapter 6)}
+%\input{slides/evaluation}
+
+%\section{Conclusions}
+%\subsection{Review (Chapter 7)}
+%\input{slides/bilan}
+%\subsection{Further work (Chapter 7)}
+%\input{slides/perspectives}
+
+
+\begin{frame}
+ \centering
+ \Huge{\textbf{Thank you for your attention}}
+ 
+\end{frame}
+
+\end{document}

@@ -1,0 +1,111 @@
+\begin{frame}{Problems}
+\begin{block}{Management of a shared and limited resource in space and time}
+\begin{itemize}
+
+\item The need for \alert{interaction support} to exchange spatial, social and temporal information
+
+\item The need for \alert{reasoning} that takes into account the spatial dimension, the temporal dimension and the social dimension
+
+\end{itemize}
+\end{block}
+
+\note{Cet exemple fait alors ressortir deux besoins sur lesquels nous apportons notre contribution :
+\begin{itemize}
+    \item Le besoin en support interaction spatial, social, et temporel
+    \item Le besoin en raisonnement qui prenne en compte les informations partagées par le biais du support interaction. Ces informations concernent les trois (3) dimensions : spatiale, temporelle et sociale .
+\end{itemize}}
+\end{frame}
+
+\begin{frame}{Contributions}
+Our contributions deal with the 2 dimensions of time:
+\begin{itemize}
+    \item \textbf{The time representation}: topology, structure as well as the approaches that allow to model it;
+    \item \textbf{The temporal reasoning}: manipulation of these representations in order to make calculations, to conduct reasoning based on them. \textbf{Anticipation}
+\end{itemize}	
+    
+\note{Pour répondre à ces deux besoins, nous nous concentrons particulièrement sur la dimension temporelle dans les SMA. Nos contributions portent sur deux aspects de cette dimension temporelle : la représentation du temps et le raisonnement temporel. 
+\par La représentation du temps peut être implicite ou explicite et traite de sa topologie, de sa structure ainsi que des approches qui permettent de le modéliser. 
+Le raisonnement temporel quant à lui est lié à la manipulation de ces représentations afin d'effectuer  des calculs, conduire des raisonnements à partir de celles-ci. En intelligence artificielle, le raisonnement temporel équivaut à un raisonnement sur ce qui change au cours du temps. Cela correspond au raisonnement sur le temps. Cependant, il convient également de souligner l'existence dans des domaines spécifiques et spécialisés (systèmes temps réel, parallélisme, etc.) d'un raisonnement dans le temps qui s'intéresse au temps nécessaire pour le calcul. Cela ne nous intéresse pas puisque le temps de calcul n'est pas la préoccupation primordiale des systèmes sur lesquels nous nous penchons. Différents problèmes très souvent issus du milieu industriel sont associés au raisonnement temporel : la planification, l'ordonnancement de tâches, le suivi de processus, le diagnostic, la prédiction. Dans notre contexte, nous choisissons de nous focaliser sur l'anticipation.
+
+Avant d’entrer plus en détails dans ces contributions, pour une meilleure compréhension, je vais expliquer brièvement comment le temps est pris en compte actuellement dans les SMA
+}
+\end{frame}
+
+\begin{frame}{Taking time into account in multi-agent simulation}
+\visible<1->{
+\begin{block}{Multi-agent simulation model}
+\visible<2->{Schematic representation of reality with a view to studying and understanding it}
+\begin{itemize}
+    \visible<3->{\item A set of agents}
+    \begin{itemize}
+        \visible<11->{\item Behavioural cycle: perception, deliberation, action/influence}
+    \end{itemize}
+    \visible<4->{\item An environment}
+    \begin{itemize}
+        \visible<7->{\item spatial and/or social}
+        \visible<8->{\item contain spatial and social activation contexts data}
+    \end{itemize}
+    \visible<5->{\item A set of objects}
+    \visible<6->{\item A set of relation}
+        \begin{itemize}
+        \visible<9->{\item Agents act or exert an influence on their environment}
+        \visible<10->{\item Agents perceive their environment}
+    \end{itemize}
+\end{itemize}
+\end{block}
+}
+\visible<1->{
+\begin{block}{Simulation platform}
+\end{block}
+}
+
+\note{Une simulation multi-agents peut se diviser en deux grandes parties: la plateforme de simulation ou simulateur, le modèle de simulation. Le modèles de simulation proposent une représentation schématique de la réalité en vue de l’étudier, de la comprendre. Un modèle simulation multi-agent est  composé d’un ensemble d’entités autonomes, que l’on appelle agents, situés dans un certain environnement et interagissant selon certaines relations. D’une manière plus formelle Ferber caractérise un système multi-agent par un environnement (E), un ensemble d’objets (O) situés dans E. Ces objets peuvent être perçus, créés, détruits et modifiés par les, un ensemble d’agents (A), qui sont des objets particuliers, lesquels représentent les entités actives du système, un ensemble de relations (R) qui unissent des objets (et donc des agents) entre eux.
+\par Dans la plupart des modèles, l’environnement est soit un environnement spatial, soit un environnement de communication dont un cas particulier est l’environnement social. Ces environnements contiennent les données relatives aux contextes d’activation spatiales et sociales de l’agent. La relation entre l’agent et son environnement se traduit par le fait que l’agent agit ou exerce une influence sur son environnement et le perçoit. 
+\par Le cycle comportemental classique d’un agent se résume alors en trois phases: une phase de perception où il récolte des informations contenues au niveau de l’environnement, une phase de délibération où l’agent active son processus de raisonnement et choisi un comportement à exécuter en fonction des percepts qu’il aura récolté et de son état interne et une phase d'action ou d’influence où l’agent agit ou essaie d’agir sur son environnement.
+}
+\end{frame}
+
+\begin{frame}{Taking time into account in multi-agent simulation}
+\begin{block}{Multi-agent simulation model}
+\end{block}
+\begin{block}{Simulation platform}
+\begin{itemize}
+    \item Dedicated to the multi-agent simulation model development
+    \item Contain the \alert{scheduler}
+    \begin{itemize}
+        \item Time management : simulation activation cycle
+        \item Simulated time (virtual watch) $\ne$ real time (real watch)
+    \end{itemize}
+    \item \textbf{Main limit }: no access to information about the temporal activation dynamics hold by the scheduler
+\end{itemize}
+\end{block}
+
+\note{
+La plateforme de simulation multi-agents est dédiée au développement de systèmes et simulations multi-agent. Elle peut contenir un ensemble de librairie facilitant le développement d'un modèle de simulation. Plus particulièrement, puisque nous nous intéressons au temps, les plateforme de simulations comme celles que nous utilisons dans le cadre de cette thèse contiennent une entité appelée ordonnanceur. Cet ordonnanceur est responsable de la gestion du temps en terme de cycle d’activation de la simulation. Son fonctionnement consiste en une mécanique qui fait écouler le temps, qui active les agents et met à jour les environnements en fonction d’une horloge virtuelle . Nous parlons notamment de temps simulé qui est différent du temps réel qui est notre temps astronomique. Le temps simulé est le reflet de notre temps, c'est le temps qui est mesuré par une horloge virtuelle intégrée dans le simulateur. Ce temps simulé est géré par l'ordonnanceur. Pour cela, l’ordonnanceur utilise différents approches d’ordonnancement : à pas de temps constant, événementielle, hybride, etc. La manière dont le temps est géré est différent selon l’approche utilisé, ainsi chaque approche peut avoir ses avantages et ses limites. Cependant celle que nous retiendrons est le fait que l'agent n'a pas accès aux informations sur la dynamique d'activation temporelle contenues au niveau de l'ordonnanceur de la simulation.
+}
+\end{frame}
+
+\begin{frame}{Taking time into account in multi-agent simulation}
+\begin{itemize}
+    \item Relation between agent and scheduler
+        \begin{itemize}
+            \item direct link
+            \item no exchange of information about the temporal activation dynamic : it is possible to share information however it is not possible to access to it.
+    \end{itemize}
+    \item The agent cannot take time information into account in his reasoning
+    \item Accessing or perceiving contextual data and extracting relevant information from it is always the key to advancing the effectiveness of smart city functionalities.
+    \item Requirements :
+    \begin{itemize}
+        \item medium for information exchange
+        \item taking into account the temporal dimension in the agent's reasoning
+    \end{itemize}
+\end{itemize}
+
+
+
+
+\note{
+En effet La relation entre l’agent et l’ordonnanceur se fait par lien direct. En fonction de l'approche d'ordonnancement utilisé, l'agent ou le modèle de simulation détermine le rythme d’activation et le communique à l'ordonnanceur de la simulation, au niveau de la plateforme de simulation. L’ordonnanceur active donc les agents en fonction de ces informations. Nous constatons alors qu’aucun échange d’informations ne peut être effectué au niveau de la dimension temporelle. Par exemple, il n’est pas possible pour un agent d'avoir la visibilité concernant le cycle d’activation d’un autre agent. En effet, le traitement de l’information se fait dans un seul sens : en fonction de l’approche d’ordonnancement utilisé, l’agent peut avoir la possibilité de partager des informations sur son contexte d’activation et sa dynamique d’activation temporelle. Cependant, aucun support n’est prévu pour la consultation de ces données. Il peut donc y avoir partage d'information mais pas échange. Car échange signifie partage et accès. Par conséquent, il est également impossible pour l’agent de prendre en compte dans son raisonnement des informations auxquelles il n’a pas accès : c’est-à-dire des informations sur le contexte d'activation temporel. Pourtant, selon Nigonet al. , les différentes caractéristiques des villes intelligentes partagent un trait commun : elles dépendent toutes du contexte. L’accès ou la perception de données contextuelles et l’extraction d’informations pertinentes à partir de celles-ci sont toujours la clé pour faire progresser l’efficacité des fonctionnalités des villes intelligentes. 
+
+\par Nous constatons alors un réel besoin de support permettant non seulement le partage mais également l’accès au contexte et à la dynamique d’activation temporelle, comme c’est déjà le cas pour le contexte spatial et le contexte social. Ce support doit permettre aux agents d’avoir une visibilité sur la dimension temporelle pour prendre en compte les informations du contexte d’activation temporel dans son processus de raisonnement.pre Voyons plus en détails comment nos propositions permettent de nous affranchir de ces limites.}
+\end{frame}
