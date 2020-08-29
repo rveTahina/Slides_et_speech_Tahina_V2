@@ -1,38 +1,48 @@
 \begin{frame}{Context}{Multi-agent Simulation of Smart Cities}
-Application of multi-agent \alert{simulations} in the field of smart cities and smart islands. Example of London and Reunion Island cases. Collaboration with 
+\par Application of multi-agent \alert{simulations} in the field of smart cities and smart islands. 
+\medbreak
+\par Collaboration with 
     \begin{figure}
 	\includegraphics[width=2cm]{assets/icl.png}
 	\hspace{2cm}
 	\includegraphics[width=1cm]{assets/saintDenis.png}
     \end{figure}
-
+\medbreak
+\par Multi-agent simulation of \alert{electric vehicle} movement in a territory and their recharge with \alert{public charging point}
+    \begin{figure}
+	\includegraphics[width=1cm]{figures/electric-car.png}
+	\hspace{2cm}
+	\includegraphics[width=1cm]{figures/charging.png}
+    \end{figure}
+\par Example of London and Reunion Island cases
+\par Two (2) simulation models
 \note{
 Cette thèse s'inscrit dans le cadre d'un sous-thème développé par notre groupe de travail système collectif adaptatif (SCA) sur lequel nous travaillons avec des chercheurs de l'Imperial College London et la mairie de Saint-Denis de La Réunion. Dans ce cadre nous avons développé deux modèles de simulations multi-agents que nous avons particulièrement appliqué sur Londres et sur La Réunion. Nous travaillons sur 2 modèles de simulations multi-agents.
 }
     
 \end{frame}
 
-\begin{frame}{Context}{Simulation Models}
-\begin{figure}
-    \includegraphics[width=.6\linewidth]{figures/smartCityModel.png}
-    \caption{\textbf{SmartCityModel}\footnote{
+\begin{frame}{Context}{SmartCityModel\footnote{
     RALITERA, Tahina, FERARD, Maxime, BUSTOS-TURU, Gonzalo, et al. Steps Towards Simulating Smart Cities and Smart Islands with a Shared Generic Framework. In : Proceedings of the 6th International Conference on Smart Cities and Green ICT Systems. SCITEPRESS-Science and Technology Publications, Lda, 2017. p. 329-336.
     \medbreak
-    RALITERA, Tahina et COURDIER, Rémy. Toward Smart Island Simulation Application. In : International Conference on Practical Applications of Agents and Multi-Agent Systems. Springer, Cham, 2017. p. 457-469.
-    } built upon the \textbf{Repast Simphony} multi-agent simulation platform} 
+    RALITERA, Tahina et COURDIER, Rémy. Toward Smart Island Simulation Application. In : International Conference on Practical Applications of Agents and Multi-Agent Systems. Springer, Cham, 2017. p. 457-469.}}
+\begin{figure}
+    \includegraphics[width=.6\linewidth]{figures/smartCityModel.png}
+    \caption{\textbf{SmartCityModel} built upon the \textbf{Repast Simphony} multi-agent simulation platform and using SIG} 
 \end{figure}
 \note{
 
 
-\par Le premier esr SmartCityModel : qui a été utilisé pour différents scénario mais qui dans notre cadre a été utilisé pour la simulation de flux de mobilité de véhicules électriques sur un territoire. Il s'agit d'un modèle développé à l'origine par les chercheurs de l'ICL sur lequel nous avons contribué. Cela a notamment fait l'objet de deux publications. Ce modèle de simulation tourne sur la plateforme développée à l'internationale Repast Simphony. Vous pouvez notamment voir ici une capture d'écran de l'interface utilisateur de la simulation. Les agents sont des conducteurs de véhicules électriques ou/et des bornes de recharges électriques. Les voitures électriques sont affichées sous forme d'étoiles orange, ils se déplacent le long des routes qui sont affichées sous forme de lignes noirs.
+\par Le premier est SmartCityModel : qui a été utilisé pour différents scénario mais qui dans notre cadre a été utilisé pour la simulation de flux de mobilité de véhicules électriques sur un territoire. Il s'agit d'un modèle développé à l'origine par les chercheurs de l'ICL sur lequel nous avons contribué. Cela a notamment fait l'objet de deux publications. Ce modèle de simulation tourne sur la plateforme développée à l'internationale Repast Simphony. Vous pouvez notamment voir ici une capture d'écran de l'interface utilisateur de la simulation. Les agents sont des conducteurs de véhicules électriques ou/et des bornes de recharges électriques. Les voitures électriques sont affichées sous forme d'étoiles orange, ils se déplacent le long des routes qui sont affichées sous forme de lignes noirs.
+Cet environnement spatial est modélisé à partir de données SIG, coordonnées réelles.
 }
 \end{frame}
 
-\begin{frame}{Context}{Simulation Models}
+\begin{frame}{Context}{Simulation Models \footnote{AKY, Nathan, TAHINA, Ralitera, PAYET, Denis, et al. SkuadCityModel: Une simulation de déplacements urbains construite sur la plate-forme SKUAD. In : Journées Francophones Systèmes Multi-Agents (JFSMA'16)-Demonstration. Cepadues, 2018. p. 233-234.}}
 
 \begin{figure}
     \includegraphics[width=.6\linewidth]{figures/skuadCityModelGUI.png}
-    \caption{\textbf{SkuadCityModel}\footnote{AKY, Nathan, TAHINA, Ralitera, PAYET, Denis, et al. SkuadCityModel: Une simulation de déplacements urbains construite sur la plate-forme SKUAD. In : Journées Francophones Systèmes Multi-Agents (JFSMA'16)-Demonstration. Cepadues, 2018. p. 233-234.} built upon the \textbf{SimSKUAD} multi-agent simulation platform}
+    \caption{\textbf{SkuadCityModel} built upon the \textbf{SimSKUAD} multi-agent simulation platform and using SIG}
 \end{figure}
 
 \note{
@@ -46,7 +56,7 @@ Cette thèse s'inscrit dans le cadre d'un sous-thème développé par notre grou
 \begin{figure}
     \includegraphics[width=.5\linewidth]{figures/planning.png}
 \end{figure}
-\par Activity-based model
+\par \alert{Activity-based model}
         \begin{itemize}
             \item the movements result from the activities that the agents wish or have to perform
             \item the agents own an activity planning
@@ -79,9 +89,9 @@ Cette thèse s'inscrit dans le cadre d'un sous-thème développé par notre grou
 
 \begin{figure}
     \includegraphics[width=.4\linewidth]{figures/question.png}
-    \caption{ Example of the agent's anticipatory reasoning}
+    \caption{ Example of the agent's anticipatory reasoning in SmartCityModel and SkuadCityModel}
 \end{figure}
-\par The path choice in SmartCityModel or SkuadCityModel is based on the consideration of spatial dimension only: \alert{no consideration of the temporal dimension}
+\par The path choice is based on the consideration of spatial dimension only: \alert{no consideration of the temporal dimension} (planning)
 \note{
  Si nous prenons l'exemple du raisonnement anticipatif de l'agent dans SmartCityModel ou dans SkuadCityModel, afin de choisir un chemin parmis une liste de chemin ce dernier utilise une minimisation de la quantité prévisionnelle d'énergie requise pour effectuer le trajet. Pour cela, il prend en compte la valeur de la distance et de la pente. Aucune information temporelles, sur les projets individuelles relatives au planning d'activité des agents n'est pris en compte. Pourtant ce informations existent bel et bien au niveau de la simulation.
 }

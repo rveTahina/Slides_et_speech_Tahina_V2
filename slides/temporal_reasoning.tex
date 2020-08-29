@@ -1,17 +1,23 @@
 \begin{frame}{Anticipatory Reasoning in multi-agent simulations}
 \begin{columns}
+\visible<1->{
 \begin{column}{.5\linewidth}
+\vspace{.3cm}
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/classic_anticipation.png}
     \caption{Classical anticipatory reasoning}
 \end{figure}
+
 \end{column}
+}
+\visible<2->{
 \begin{column}{.5\linewidth}
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/new_anticipation.png}
     \caption{Anticipatory reasoning using the temporal environment perception}
 \end{figure}
 \end{column}
+}
 \end{columns}
 \note{
 \par Dans la plupart des approches classiques d'anticipation dans les sma, le raisonnement anticipatif prend en compte uniquement les informations sur la dimension passée et la dimension présente du temps. Dans ces types d'approches, l'agent est contraint de deviner ce qui va se passer dans le futur, car ils n'a aucune information sur le planning d'activités des autres agents. Pour se faire, les agents lancent en interne des microsimulations qui génèrent des prédictions. Dans beaucoup d'approches, ces microsimulations reproduisent tout une une partie du modèle de simulation véritablement utilisé.
@@ -35,6 +41,7 @@
 \end{frame}
 
 \begin{frame}{A consideration of the future}{Application}
+\par Question agents activity schedule
 \par \textbf{Objectives}:
 \begin{itemize}
     \item Assess or reassess the feasibility of carrying out an activity
@@ -42,7 +49,7 @@
     \item Enrich and bring more precision to the agent's activity planning
 \end{itemize}
 \begin{figure}
-    \includegraphics[width=.6\linewidth]{figures/anticipation_cycle.png}
+    \includegraphics[width=.5\linewidth]{figures/anticipation_cycle.png}
     \caption{Anticipatory reasoning}
 \end{figure}
 \note{
@@ -64,19 +71,23 @@ Dans le raisonnement anticipatif que nous mettons en place au sein des agents du
 
 \begin{frame}{Temporal reasoning}{Example and implementation}
 \begin{columns}
+\visible<1->{
 \begin{column}{.33\linewidth}
 \begin{figure}
     \includegraphics[width=.85\linewidth]{figures/one.png}
    \caption{Classical approach}
 \end{figure}
 \end{column}
+}
+\visible<2->{
 \begin{column}{.33\linewidth}
 \vspace{.3cm}
 \begin{figure}
     \includegraphics[width=.85\linewidth]{figures/two.png}
-    \caption{Classical approach (advanced version)}
 \end{figure}
 \end{column}
+}
+\visible<3->{
 \begin{column}{.33\linewidth}
 \vspace{.4cm}
 \begin{figure}
@@ -84,6 +95,7 @@ Dans le raisonnement anticipatif que nous mettons en place au sein des agents du
     \caption{Anticipatory reasoning using the temporal environment perception}
 \end{figure}
 \end{column}
+}
 \end{columns}
 
 
